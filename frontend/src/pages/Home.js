@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   const [users, setUsers] = useState([]);
-
+axios.defaults.withCredentials=true;
   useEffect(() => {
     axios
-      .get("http://localhost:5000")
+      .get("hhttps://merncrudapi.vercel.app")
       .then((result) => {
         setUsers(result.data);
       })
@@ -17,7 +17,7 @@ const Home = () => {
   }, []);
 
   const handleDelte=(id)=>{
-    axios.delete("http://localhost:5000/delete/"+id).then((result)=>{
+    axios.delete("https://merncrudapi.vercel.app/delete/"+id).then((result)=>{
       console.log(result)
       window.location.reload()
     }).catch((err)=>{
