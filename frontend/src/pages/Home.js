@@ -7,7 +7,7 @@ const Home = () => {
 axios.defaults.withCredentials=true;
   useEffect(() => {
     axios
-      .get("hhttps://merncrudapi.vercel.app")
+      .get("https://merncrudapi.vercel.app")
       .then((result) => {
         setUsers(result.data);
       })
