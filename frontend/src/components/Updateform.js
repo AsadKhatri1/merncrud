@@ -11,7 +11,7 @@ axios.defaults.withCredentials=true
   const submitHandler = (e) => {
     e.preventDefault();
     axios
-      .put("https://merncrudapi.vercel.app/updateUser/" + id, {
+      .put(`${window.location.origin}/updateUser/` + id, {
         name: name,
         email: email,
         age: age,
@@ -27,7 +27,7 @@ axios.defaults.withCredentials=true
 
   useEffect(() => {
     axios
-      .get("https://merncrudapi.vercel.app/getUser/" + id)
+      .get(``${window.location.origin}/getUser/` + id)
       .then((result) => {
         console.log(result);
         setName(result.data.name);
