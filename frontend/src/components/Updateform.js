@@ -6,12 +6,12 @@ const Updateform = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [age, setAge] = useState();
-
+axios.defaults.withCredentials=true
   const navigate = useNavigate();
   const submitHandler = (e) => {
     e.preventDefault();
     axios
-      .put("http://localhost:5000/updateUser/" + id, {
+      .put("https://merncrudapi.vercel.app/updateUser/" + id, {
         name: name,
         email: email,
         age: age,
@@ -27,7 +27,7 @@ const Updateform = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/getUser/" + id)
+      .get("https://merncrudapi.vercel.app/getUser/" + id)
       .then((result) => {
         console.log(result);
         setName(result.data.name);
