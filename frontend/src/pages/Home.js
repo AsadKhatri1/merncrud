@@ -7,7 +7,7 @@ const Home = () => {
 axios.defaults.withCredentials=true;
   useEffect(() => {
     axios
-      .get("https://merncrudapi.vercel.app")
+      .get(`${window.location.origin}`)
       .then((result) => {
         setUsers(result.data);
       })
@@ -17,7 +17,7 @@ axios.defaults.withCredentials=true;
   }, []);
 
   const handleDelte=(id)=>{
-    axios.delete("https://merncrudapi.vercel.app/delete/"+id).then((result)=>{
+    axios.delete(`${window.location.origin}/delete/`+id).then((result)=>{
       console.log(result)
       window.location.reload()
     }).catch((err)=>{
