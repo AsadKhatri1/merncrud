@@ -27,6 +27,7 @@ app.get("/", (req, res) => {
   userModel
     .find({})
     .then((users) => {
+      res.set('Access-Control-Allow-Origin', 'https://merncrud-sage.vercel.app')
       res.json(users);
     })
     .catch((err) => {
@@ -38,7 +39,7 @@ app.get("/getUser/:id", (req, res) => {
   const id = req.params.id;
   userModel
     .findById({ _id: id })
-    .then((user) => res.json(user))
+    .then((user) => {res.json(user),  res.set('Access-Control-Allow-Origin', 'https://merncrud-sage.vercel.app')})
     .catch((err) => console.log(err));
 });
 
@@ -50,6 +51,7 @@ app.post("/createUser", (req, res) => {
       age: req.body.age,
     })
     .then((user) => {
+       res.set('Access-Control-Allow-Origin', 'https://merncrud-sage.vercel.app')
       res.json(user);
     });
 });
@@ -62,6 +64,7 @@ app.put("/updateUser/:id", (req, res) => {
       { name: req.body.name, email: req.body.email, age: req.body.age }
     )
     .then((result) => {
+       res.set('Access-Control-Allow-Origin', 'https://merncrud-sage.vercel.app')
       res.json(result);
     })
     .catch((err) => console.log(err));
@@ -71,7 +74,7 @@ app.delete("/delete/:id", (req, res) => {
   const id = req.params.id;
   userModel
     .findByIdAndDelete({ _id: id })
-    .then((result) => res.json(result))
+    .then((result) =>{ res.set('Access-Control-Allow-Origin', 'https://merncrud-sage.vercel.app'), res.json(result)})
     .catch((err) => {
       console.log(err);
     });
