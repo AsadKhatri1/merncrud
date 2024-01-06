@@ -1,15 +1,13 @@
 {
-  "version":2,
-    "builds":[
+  "headers": [
     {
-      "src":"*.js", "use":"@vercel/node"
-    }
-    ],
-   
-    "routes":[
-    {
-      "src":"/(.*)",
-      "dest":"/"
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "https://merncrud-sage.vercel.app"
+        }
+      ]
     }
   ]
 }
