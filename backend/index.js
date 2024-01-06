@@ -16,7 +16,7 @@ const app = express();
 const port = 5000;
 app.use(express.json());
 app.use(cors({
-    origin: 'https://merncrud-sage.vercel.app',  // Replace with your allowed frontend origin
+    origin: 'https://merncrud-sage.vercel.app', 
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true
 }));
