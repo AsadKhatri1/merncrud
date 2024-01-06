@@ -15,13 +15,11 @@ mongoose
 const app = express();
 const port = 5000;
 app.use(express.json());
-app.use(cors(
-  {
-    origin: ["https://merncrud-sage.vercel.app"],
-    methods:["POST","GET","PUT","DELETE"],
-    credentials:true
-  }
-));
+app.use(cors({
+    origin: 'https://merncrud-sage.vercel.app',  // Replace with your allowed frontend origin
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true
+}));
 
 app.get("/", (req, res) => {
   userModel
