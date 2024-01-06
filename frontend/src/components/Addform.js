@@ -15,7 +15,7 @@ const Addform = () => {
 axios.defaults.withCredentials=true
   const submitHandler=(e)=>{
     e.preventDefault()
-    axios.post("https://merncrudapi.vercel.app/createUser",{
+    axios.post(`${window.location.origin}/createUser`,{
       name:data.name,
       email:data.email,
       age:data.age
