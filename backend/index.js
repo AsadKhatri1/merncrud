@@ -17,7 +17,7 @@ const port = 5000;
 app.use(express.json());
 app.use(cors(
   {
-    origin: [""],
+    origin: ["https://merncrud-sage.vercel.app/"],
     methods:["POST","GET","PUT","DELETE"],
     credentials:true
   }
