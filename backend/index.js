@@ -4,7 +4,7 @@ const cors = require("cors");
 const userModel = require("./models/Users");
 mongoose
   .connect(
-    "mongodb+srv://hafizasad398:dadabhai123@merncrud.zi7uzlp.mongodb.net/?retryWrites=true&w=majority"
+    "mongodb+srv://hafizasad398:dadabhai123@merncrud.zi7uzlp.mongodb.net/test?retryWrites=true&w=majority"
   )
   .then(() => {
     console.log("db connected");
